@@ -7,8 +7,6 @@
 using namespace std;
 
 #define FORMAT_NAME_LEN     512
-#define FORMAT_HTML_FORMAT  49348 // HTML Format
-#define FORMAT_LINK_SOURCE  49165 // Link Source 
 
 Clipboard::Clipboard() {
 
@@ -165,8 +163,12 @@ void Clipboard::EnumFormats() {
 BOOL Clipboard::Track() {
     if (!OpenClipboard(NULL)) return FALSE;
 
+    char szFormatName[FORMAT_NAME_LEN + 1];
     UINT format = 0;    
     while (format = EnumClipboardFormats(format)) {
+        szFormatName[0] = 0;
+        int length = GetClipboardFormatNameA(format, szFormatName, sizeof(szFormatName));
+
         HANDLE handle = GetClipboardData(format);
         if (handle == NULL) continue;
 
@@ -175,10 +177,10 @@ BOOL Clipboard::Track() {
         LPVOID lpMem = DuplicateMem(handle, &dulHandle, &size);
         if (lpMem == NULL) continue;
 
-        if (format == FORMAT_LINK_SOURCE) {            
+        if (0 == strcmp(szFormatName, "Link Source")) {
             PrintLinkSource(lpMem, size);
         }
-        else if (format == FORMAT_HTML_FORMAT) {
+        else if (0 == strcmp(szFormatName, "HTML Format")) {
             PrintSourceURL(lpMem, size);            
         }
                 
