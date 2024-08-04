@@ -24,6 +24,7 @@ LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int main() {
+    SetConsoleOutputCP(65001); 
     Clipboard().Track();
 
     return 0;

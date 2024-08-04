@@ -30,6 +30,21 @@
     <ClInclude Include="Clipboard.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CBHTMLFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CBLinkSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CBTEXT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CBUNICODETEXT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CBFormateBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WindowsProject1.rc">
@@ -49,6 +64,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Clipboard.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBHTMLFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBLinkSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBTEXT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBUNICODETEXT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CBFormateBase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
